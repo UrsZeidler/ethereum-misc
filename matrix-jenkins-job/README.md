@@ -21,7 +21,7 @@ Select your `Source Code Management` and define the `Build Triggers`.
 
 The important configuration is the `Configuration Matrix`
 
-[](configure-matrix-job.png)
+![configer matrix](https://github.com/UrsZeidler/ethereum-misc/blob/master/matrix-jenkins-job/images/configure-matrix-job.png)
 
 Here we define the different implementations as axis. The Parameter is defined as `EFP` and will be used later on. You should check the `Run each configuration sequentially` checkbox.
 
@@ -152,6 +152,8 @@ We make sure geth is only started when we run on the rpc, then we create the nec
 At last we store the geth-miner pid as we need it to stop the geth miner after the tests are done.
 
 ### build the software
+
+![maven config](https://github.com/UrsZeidler/ethereum-misc/blob/master/matrix-jenkins-job/images/maven-config.png)
 
 As the software is a maven project select `Invoke top-level Maven targets` in the parameter section we define the necessary parameters and link them to the defined matrix parameter. See the [java code](https://github.com/UrsZeidler/uml2solidity/wiki/JavaCode#ethereuminstance) wiki page for uml2solidity. Here we need of course the main `EthereumFacadeProvider` parameter and the `chain-id` while the `EthereumFacadeProvider` is filled by the axis parameter each time the build is started, the `chain-id` has to match the `NETWORKID` defined in the shell script.
 

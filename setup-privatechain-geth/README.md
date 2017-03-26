@@ -7,3 +7,5 @@ There are three bash scripts all of them are configured by the `private-chain.co
 * `setup-private-chain.sh` used to setup the chain, it writes the customized genesis.json and initialize the blockchain
 * `start-private-chain.sh` start the created chain without a miner
 * `start-private-chain-miner.sh` start the private chain with a miner
+
+To create some accounts start the `start-private-chain.sh` script with the console parameter and create accounts in the geth console.

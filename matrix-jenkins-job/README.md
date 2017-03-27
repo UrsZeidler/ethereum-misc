@@ -157,5 +157,17 @@ At last we store the geth-miner pid as we need it to stop the geth miner after t
 
 As the software is a maven project select `Invoke top-level Maven targets` in the parameter section we define the necessary parameters and link them to the defined matrix parameter. See the [java code](https://github.com/UrsZeidler/uml2solidity/wiki/JavaCode#ethereuminstance) wiki page for uml2solidity. Here we need of course the main `EthereumFacadeProvider` parameter and the `chain-id` while the `EthereumFacadeProvider` is filled by the axis parameter each time the build is started, the `chain-id` has to match the `NETWORKID` defined in the shell script.
 
+### after the build
+
+After the build we stop the geh instance. So we use a `Execute shell` again.
+
+```bash
+#!/bin/bash
+
+if [ "$EFP" == "rpc" ]; then
+	kill $(cat trader.pid)
+fi
+
+```
 
 

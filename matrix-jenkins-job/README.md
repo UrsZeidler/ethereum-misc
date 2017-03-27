@@ -165,7 +165,7 @@ After the build we stop the geh instance. So we use a `Execute shell` again.
 #!/bin/bash
 
 if [ "$EFP" == "rpc" ]; then
-	kill $(cat trader.pid)
+	kill $(cat geth.pid)
 fi
 
 ```
